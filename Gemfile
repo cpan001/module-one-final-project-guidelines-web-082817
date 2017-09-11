@@ -8,5 +8,4 @@ gem "require_all"
 
 gem 'food2fork'
 gem 'unirest', '~> 1.1', '>= 1.1.2'
-gem 'httparty', '~> 0.15.6'
 gem 'json', '~> 2.1'
