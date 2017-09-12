@@ -1,12 +1,15 @@
 class Rating < ActiveRecord::Base
 
-  attr_accessor :star_rating, :user, :recipe
+  belongs_to :user
+  belongs_to :recipe
 
-  def initialize(star_rating, user, recipe)
-    @star_rating = star_rating
-    @user = user
-    @recipe = recipe
-  end
+
+  # def initialize(user, recipe, star_rating=nil, fav=nil)
+  #   @user = user
+  #   @recipe = recipe
+  #   @star_rating = star_rating
+  #   @fav = fav
+  # end
 
 
 end
