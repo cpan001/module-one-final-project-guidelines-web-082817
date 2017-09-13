@@ -12,12 +12,10 @@ class User < ActiveRecord::Base
 
   #creates new recipe object and associates with ingredients, returns recipe object
   def create_recipe(title, ingredients_array)
-    recipe = Recipe.create(title: title)
+    recipe = Recipe.find_or_create_by(title: title)
     recipe.ingredients = Ingredient.create_ingredients_from_array(ingredients_array)
-    recipe.ratings << Rating.create(user: self, recipe: recipe, fav: true)
     recipe
   end
-
 
   #############################
 
@@ -34,12 +32,8 @@ class User < ActiveRecord::Base
     fav_recipes.each.with_index(1) do |rating, i|
       puts "#{i}. Title: #{rating.recipe.title.capitalize}"
       puts "      Ingredients: #{rating.recipe.ingredients_name_string}"
-      puts "-------------------------------------------------"
+      puts "------------------------------------------------------------------------------------------------------"
     end
-  end
-
-  def click_for_more_recipe_details(index)
-
   end
 
 

@@ -41,12 +41,12 @@ class API
   end
 
   #array of string ingredients
-  def self.recipe_ingredients(recipes_hash)
-    recipes_hash["ingredients"]
+  def self.recipe_ingredients(recipe_hash)
+    recipe_hash["ingredients"]
   end
 
-  def self.recipe_title(recipes_hash)
-    recipes_hash["title"]
+  def self.recipe_title(recipe_hash)
+    recipe_hash["title"]
   end
 
 

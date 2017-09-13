@@ -10,7 +10,7 @@ class Ingredient < ActiveRecord::Base
 
   #creates new ingredients from array and returns an array of ingredient objs
   def self.create_ingredients_from_array(array)
-    array.collect {|ing| Ingredient.create(name: ing)}
+    array.collect {|ing| Ingredient.find_or_create_by(name: ing)}
   end
 
 
