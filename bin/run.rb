@@ -1,12 +1,7 @@
 require_relative '../config/environment'
 
-# natalie = User.all.first
-# christina = User.all.second
-#
-# grilled_cheese = natalie.create_recipe("grilled cheese", ["cheese", "bread"])
-# tacos = christina.create_recipe("tacos", ["beef", "tortilla"])
-# christina.rate_recipe(4, grilled_cheese)
-# natalie.rate_recipe(5, grilled_cheese)
 
 
+pid = fork{ exec 'afplay', "/Users/cpan/Documents/Flatiron/Projects/module-one-final-project-guidelines-web-082817/lib/Music/happy_groovy.mp3" }
 CLI.new.run
+pid = fork{ exec 'killall afplay'}

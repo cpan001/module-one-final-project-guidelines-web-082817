@@ -8,9 +8,22 @@ require 'pry'
 
 class CLI
 
+  def cake
+    puts "\n       _..--'''@   @'''--.._".colorize(:light_red)
+    puts "     .'   @_/-//-\/>/>'/ @  '.".colorize(:light_red)
+    puts "    (  @  /_<//<'/----------^-)".colorize(:light_red)
+    puts "    |'._  @     //|###########|".colorize(:light_red)
+    puts "    |~  ''--..@|',|}}}}}}}}}}}|".colorize(:light_red)
+    puts "    |  ~   ~   |/ |###########|".colorize(:light_red)
+    puts "    | ~~  ~   ~|./|{{{{{{{{{{{|".colorize(:light_red)
+    puts "     '._ ~ ~ ~ |,/`````````````".colorize(:light_red)
+    puts "        ''--.~.|/".colorize(:light_red)
+  end
+
   def welcome
     puts "Welcome to the Recipe Finder!".colorize(:green).bold
     puts "\nYou can create and save your own recipe, get a randomly selected recipe, or search for a new recipe! ".colorize(:green).bold
+    cake
   end
 
   #asks for user name, gets user name string, finds or creates and saves user object, and returns user object
@@ -243,7 +256,7 @@ class CLI
     puts "Type the following letters to do...".colorize(:blue)
     puts "-----------------------------------------------".colorize(:cyan).bold
     puts "s = Save Recipe to My Favorites".colorize(:blue)
-    puts "r = Rate Menu".colorize(:blue)
+    puts "r = Rate Recipe".colorize(:blue)
     puts "a = See Average Recipe Rating".colorize(:blue)
     puts "o = Open Link to See the Steps for This Recipe".colorize(:blue)
     puts "m = Back to Main Menu".colorize(:blue)
@@ -303,7 +316,7 @@ class CLI
   ########## EXIT PROGRAM ###############
   def exit_program
     puts ":( Goodbye! :(".colorize(:red).bold
-    system("sl")
+    # system("sl")
   end
   #######################################
 
