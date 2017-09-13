@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170912154505) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.integer  "star_rating"
+    t.float    "star_rating"
     t.boolean  "fav"
     t.integer  "user_id"
     t.integer  "recipe_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170912154505) do
 
   create_table "recipes", force: :cascade do |t|
     t.string   "title"
+    t.text     "steps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

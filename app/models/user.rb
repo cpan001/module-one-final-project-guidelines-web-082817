@@ -1,4 +1,8 @@
+require 'colorize'
+
 class User < ActiveRecord::Base
+
+
 
   has_many :ratings
   has_many :recipes, through: :ratings
@@ -11,8 +15,8 @@ class User < ActiveRecord::Base
   #########CREATING RECIPE STEPS########
 
   #creates new recipe object and associates with ingredients, returns recipe object
-  def create_recipe(title, ingredients_array)
-    recipe = Recipe.find_or_create_by(title: title)
+  def create_recipe(title, ingredients_array, steps)
+    recipe = Recipe.find_or_create_by(title: title, steps: steps)
     recipe.ingredients = Ingredient.create_ingredients_from_array(ingredients_array)
     recipe
   end
@@ -32,7 +36,9 @@ class User < ActiveRecord::Base
     fav_recipes.each.with_index(1) do |rating, i|
       puts "#{i}. Title: #{rating.recipe.title.capitalize}"
       puts "      Ingredients: #{rating.recipe.ingredients_name_string}"
-      puts "------------------------------------------------------------------------------------------------------"
+      puts "      Steps: #{rating.recipe.steps}"
+
+      puts "------------------------------------------------------------------------------------------------------".colorize(:cyan).bold
     end
   end
 

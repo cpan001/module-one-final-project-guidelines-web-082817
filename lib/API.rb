@@ -49,5 +49,10 @@ class API
     recipe_hash["title"]
   end
 
+  #returns recipe source url in string
+  def self.source_url(recipe_hash)
+    recipe_hash["source_url"]
+  end
+
 
 end
