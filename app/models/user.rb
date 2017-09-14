@@ -2,15 +2,8 @@ require 'colorize'
 
 class User < ActiveRecord::Base
 
-
-
   has_many :ratings
   has_many :recipes, through: :ratings
-
-
-  # def initialize(name)
-  #   @name = name
-  # end
 
   #########CREATING RECIPE STEPS########
 
@@ -35,8 +28,8 @@ class User < ActiveRecord::Base
   def fav_recipes_names(fav_recipes)
     fav_recipes.each.with_index(1) do |rating, i|
       puts "#{i}. Title: #{rating.recipe.title.capitalize}"
-      puts "      Ingredients: #{rating.recipe.ingredients_name_string}"
-      puts "      Steps: #{rating.recipe.steps}"
+      puts "   Ingredients: #{rating.recipe.ingredients_name_string}"
+      puts "   Steps: \n      #{rating.recipe.steps}"
 
       puts "------------------------------------------------------------------------------------------------------".colorize(:cyan).bold
     end

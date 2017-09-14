@@ -22,7 +22,7 @@ class CLI
 
   def welcome
     puts "Welcome to the Recipe Finder!".colorize(:green).bold
-    puts "\nYou can create and save your own recipe, get a randomly selected recipe, or search for a new recipe! ".colorize(:green).bold
+    puts "\nYou can search for a new recipe, get a randomly selected recipe, and create and save your own recipe!".colorize(:green).bold
     cake
   end
 
@@ -61,7 +61,7 @@ class CLI
     if valid_menu_selection?(user_menu_selection)
       user_menu_selection
     else
-      puts "\nInvalid input!\n ".colorize(:red).bold
+      puts "\nInvalid input \u{1f4a9} !\n ".colorize(:red).bold
       user_menu_input
     end
   end
@@ -154,7 +154,7 @@ class CLI
     if valid_rating?(user_rating)
       user_rating
     else
-      puts "\nInvalid input!\n ".colorize(:red).bold
+      puts "\nInvalid input \u{1f4a9} !\n ".colorize(:red).bold
       get_recipe_rating
     end
   end
@@ -188,7 +188,7 @@ class CLI
     elsif user.fav_recipes.length == 0
       puts "\nYou have no favorite recipes to choose from :(...\n ".colorize(:red).bold
     else
-      puts "\nInvalid input!\n ".colorize(:red).bold
+      puts "\nInvalid input \u{1f4a9} !\n ".colorize(:red).bold
       get_number_of_random_recipes(user)
     end
 
@@ -225,7 +225,7 @@ class CLI
     if valid_recipe_num?(user_recipe_select)
       user_recipe_select
     else
-      puts "Invalid input!".colorize(:red).bold
+      puts "Invalid input \u{1f4a9} !".colorize(:red).bold
       get_menu_selection
     end
   end
@@ -273,7 +273,7 @@ class CLI
     if valid_sub_menu_selection?(user_sub_menu_selection)
       user_sub_menu_selection
     else
-      puts "\nInvalid input!\n ".colorize(:red).bold
+      puts "\nInvalid input \u{1f4a9} !\n ".colorize(:red).bold
       user_sub_menu_input
     end
   end
@@ -316,7 +316,6 @@ class CLI
   ########## EXIT PROGRAM ###############
   def exit_program
     puts ":( Goodbye! :(".colorize(:red).bold
-    # system("sl")
   end
   #######################################
 
